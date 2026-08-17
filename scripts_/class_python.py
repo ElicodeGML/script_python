@@ -1,47 +1,62 @@
+# ==================== IMPORTS ====================
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
+import numpy as np
+
+
+# ==================== CAR CLASS ====================
 class Car:
+    """Simple car class with speed management."""
     
-    def __init__(self, p_brand, p_color, p_speed = 0):
+    def __init__(self, p_brand, p_color, p_speed=0):
+        """Initialize a car with brand, color, and speed."""
         self.brand = p_brand
         self.color = p_color
         self.speed = p_speed
-    def accelerate(self , p_speed):
+    
+    def accelerate(self, p_speed):
+        """Increase car speed."""
         self.speed += p_speed
 
-    def decelerate(self , p_speed):
+    def decelerate(self, p_speed):
+        """Decrease car speed (minimum 0)."""
         self.speed -= p_speed
         if self.speed < 0:
             self.speed = 0
 
+
+# ==================== CAR DEMO ====================
+# Create car instances
 blue_car = Car("BMW", "blue", 20)
 red_car = Car("Peugot", "red")
 
+# Update colors
 blue_car.color = "blue"
 red_car.color = "red"
 
+# Display initial speeds
 print(blue_car.speed)
 print(red_car.speed)
 
+# Test acceleration
 blue_car.accelerate(20)
 print(blue_car.speed)
 print(red_car.speed)
 
+# Test deceleration
 blue_car.decelerate(10)
 print(blue_car.speed)
 print(red_car.speed)
 
+# Test deceleration with negative prevention
 blue_car.decelerate(100)
 print(blue_car.speed)
 print(red_car.speed)
 
-import tkinter as tk
-from tkinter import simpledialog, messagebox, scrolledtext
-import numpy as np
 
-
+# ==================== GAME CLASS ====================
 class Game:
-    import tkinter as tk
-    from tkinter import simpledialog, messagebox, scrolledtext
-    import numpy as np
+    """Game class to manage scoring rounds with multiple players."""
 
     def __init__(self, target_score=None):
         self.players = {}

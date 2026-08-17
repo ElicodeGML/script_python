@@ -1,8 +1,0 @@
-import os
-import shutil
-
-sources = "images.png"
-target = "images/test/images.png"
-
-shutil.copy(sources, target)
-os.remove(sources)

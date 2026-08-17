@@ -1,27 +1,32 @@
+# ============================================
+# CLASSE ROBOT - Classe de base
+# ============================================
 class Robot:
-    def __init__(self, nom, energie = 100):
+    """Classe représentant un robot de base avec énergie."""
+    
+    def __init__(self, nom, energie=100):
+        """Initialise un robot avec un nom et une énergie."""
         self.name = nom
         self.energie = energie
 
     def se_presenter(self):
+        """Affiche une présentation du robot."""
         print(f"Bonjour je m'appelle {self.name}")
     
-    def attaquer_bot(self, cible = 100):
-        cible
+    def attaquer_bot(self, cible=100):
+        """Attaque une cible en dépensant 20 d'énergie."""
+        # Vérifier si l'énergie est négative
         if self.energie < 0:
             self.energie = 0
         else:
+            # Attaque si assez d'énergie
             if self.energie >= 20:
-                self.energie - 20
+                self.energie -= 20  # Dépenser l'énergie
                 print(f"vous avez dépenser 20 energie")
                 print(f"Il vous reste {self.energie} energie")
-                cible.energie -= 20
+                cible.energie -= 20  # Infliger dégâts à la cible
             else:
                 print(f"Vous n'avez pas assez d'energie")
-        print(f"""Score: {bot_a.name} à {bot_a.energie} energie
-       {bot_degat.name} à {bot_degat.energie} energie
-       {bot_soin.name} à {bot_soin.energie} energie
-              """)
 
 class RobotGuerrier(Robot):
     def __init__(self, nom, energie = 100):

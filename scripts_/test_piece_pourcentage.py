@@ -1,6 +1,10 @@
+"""
+Module de statistiques pour analyser et visualiser des données.
+"""
 import statistics
-import math
 from collections import Counter
+import matplotlib.pyplot as plt
+
 
 class Statistiques:
     """Classe pour calculer diverses mesures statistiques sur une liste de nombres."""
