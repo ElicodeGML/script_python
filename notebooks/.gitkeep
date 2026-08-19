@@ -1,0 +1,2 @@
+# Move remaining notebooks from notebook/ to notebooks/ with normalized names
+# The push_files call only moved a few examples; the script in scripts/reorganize_repo.py will finish the rest when executed locally.
